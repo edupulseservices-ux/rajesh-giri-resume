@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Rajesh Kumar Giri — Senior Manager</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --primary:#6A1B1A; /* Dark Maroon */
+      --accent:#D4AF37;  /* Golden Beige */
+      --bg:#F9F6F1;      /* Ivory White */
+      --text:#0A0A0A;    /* Jet Black */
+      --highlight:#F3E5AB; /* Light Gold */
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:'Inter',system-ui,Arial;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased}
+
+    /* Layout */
+    .container{max-width:980px;margin:48px auto;padding:32px}
+    header{display:flex;gap:24px;align-items:center}
+    .photo{width:140px;height:140px;border-radius:8px;overflow:hidden;border:4px solid var(--accent);box-shadow:0 8px 24px rgba(20,20,20,0.08)}
+    .photo img{width:100%;height:100%;object-fit:cover;display:block}
+
+    .name{font-family:'Playfair Display',serif;font-size:28px;color:var(--primary);margin:0}
+    .title{font-weight:600;color:var(--text);margin-top:6px}
+    .contact{margin-top:10px;font-size:14px;color:rgba(10,10,10,0.8)}
+
+    /* Actions */
+    .actions{margin-left:auto;display:flex;flex-direction:column;gap:10px}
+    .btn{display:inline-block;padding:10px 16px;border-radius:8px;font-weight:600;text-decoration:none;text-align:center}
+    .btn-primary{background:linear-gradient(180deg,var(--accent),#b78f28);color:var(--text);box-shadow:0 6px 18px rgba(0,0,0,0.06);border:1px solid rgba(0,0,0,0.06)}
+    .btn-secondary{background:transparent;border:1px solid var(--primary);color:var(--primary)}
+
+    /* Sections */
+    section{margin-top:28px;padding:22px;border-radius:10px;background:linear-gradient(180deg, #ffffff00, #ffffff00);}
+    h2{font-family:'Playfair Display',serif;color:var(--primary);margin:0 0 12px 0;font-size:20px}
+    p,li{line-height:1.5;color:var(--text);font-size:15px}
+
+    .two-col{display:grid;grid-template-columns:1fr 320px;gap:24px}
+    .card{background:linear-gradient(180deg, #ffffff, #ffffff);border-radius:10px;padding:18px;box-shadow:0 6px 18px rgba(0,0,0,0.04);border:1px solid rgba(0,0,0,0.04)}
+
+    /* Experience list */
+    .exp-item{margin-bottom:14px}
+    .exp-title{font-weight:600;color:var(--primary)}
+    .exp-meta{font-size:13px;color:rgba(0,0,0,0.6);margin-top:4px}
+    .divider{height:1px;background:var(--accent);opacity:0.18;margin:18px 0;border-radius:2px}
+
+    /* Expertise pills */
+    .pills{display:flex;flex-wrap:wrap;gap:8px}
+    .pill{padding:8px 10px;border-radius:999px;background:var(--highlight);color:var(--text);font-weight:600;font-size:13px;border:1px solid rgba(0,0,0,0.04)}
+
+    /* Personal info */
+    .info dl{display:grid;grid-template-columns:140px 1fr;gap:8px 16px}
+    .info dt{font-weight:600;color:var(--primary)}
+    .info dd{margin:0;color:var(--text)}
+
+    /* Footer */
+    footer{text-align:center;margin-top:28px;color:rgba(0,0,0,0.6);font-size:13px}
+
+    /* Responsive */
+    @media(max-width:880px){
+      .two-col{grid-template-columns:1fr}
+      .actions{flex-direction:row;margin-top:12px}
+      header{align-items:flex-start}
+      .photo{width:120px;height:120px}
+    }
+
+    /* Subtle animations */
+    .fade{opacity:0;transform:translateY(12px);transition:all .6s ease-out}
+    .fade.in{opacity:1;transform:none}
+  </style>
+  <style>
+    :root{
+      --primary:#6A1B1A;
+      --accent:#D4AF37;
+      --bg:#F9F6F1;
+      --text:#0A0A0A;
+      --highlight:#F3E5AB;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:'Inter',system-ui,Arial;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased}
+
+    .container{max-width:980px;margin:48px auto;padding:32px}
+    header{display:flex;gap:24px;align-items:center}
+    .photo{width:140px;height:140px;border-radius:8px;overflow:hidden;border:4px solid var(--accent);box-shadow:0 8px 24px rgba(20,20,20,0.08)}
+    .photo img{width:100%;height:100%;object-fit:cover;display:block}
+
+    .name{font-family:'Playfair Display',serif;font-size:28px;color:var(--primary);margin:0}
+    .title{font-weight:600;color:var(--text);margin-top:6px}
+    .contact{margin-top:10px;font-size:14px;color:rgba(10,10,10,0.8)}
+
+    .actions{margin-left:auto;display:flex;flex-direction:column;gap:10px}
+    .btn{display:inline-block;padding:10px 16px;border-radius:8px;font-weight:600;text-decoration:none;text-align:center;transition:all .25s ease}
+    .btn-primary{background:linear-gradient(180deg,var(--accent),#b78f28);color:var(--text);box-shadow:0 6px 18px rgba(0,0,0,0.06);border:1px solid rgba(0,0,0,0.06)}
+    .btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,0.1)}
+    .btn-secondary{background:transparent;border:1px solid var(--primary);color:var(--primary)}
+    .btn-secondary:hover{background:var(--primary);color:white}
+
+    section{margin-top:28px;padding:22px;border-radius:10px;background:linear-gradient(180deg, #ffffff00, #ffffff00);}
+    h2{font-family:'Playfair Display',serif;color:var(--primary);margin:0 0 12px 0;font-size:20px}
+    p,li{line-height:1.5;color:var(--text);font-size:15px}
+
+    .two-col{display:grid;grid-template-columns:1fr 320px;gap:24px}
+    .card{background:#fff;border-radius:10px;padding:18px;box-shadow:0 6px 18px rgba(0,0,0,0.04);border:1px solid rgba(0,0,0,0.04)}
+
+    .exp-item{margin-bottom:14px}
+    .exp-title{font-weight:600;color:var(--primary)}
+    .exp-meta{font-size:13px;color:rgba(0,0,0,0.6);margin-top:4px}
+    .divider{height:1px;background:var(--accent);opacity:0.18;margin:18px 0;border-radius:2px}
+
+    .pills{display:flex;flex-wrap:wrap;gap:8px}
+    .pill{padding:8px 10px;border-radius:999px;background:var(--highlight);color:var(--text);font-weight:600;font-size:13px;border:1px solid rgba(0,0,0,0.04)}
+
+    .info dl{display:grid;grid-template-columns:140px 1fr;gap:8px 16px}
+    .info dt{font-weight:600;color:var(--primary)}
+    .info dd{margin:0;color:var(--text)}
+
+    footer{text-align:center;margin-top:28px;color:rgba(0,0,0,0.6);font-size:13px}
+
+    @media(max-width:880px){
+      .two-col{grid-template-columns:1fr}
+      .actions{flex-direction:row;margin-top:12px}
+      header{align-items:flex-start}
+      .photo{width:120px;height:120px}
+    }
+
+    .fade{opacity:0;transform:translateY(12px);transition:all .6s ease-out}
+    .fade.in{opacity:1;transform:none}
+
+    /* Contact form styling */
+    .contact-form{background:#fff;border-radius:10px;padding:20px;margin-top:24px;box-shadow:0 6px 18px rgba(0,0,0,0.05);border:1px solid rgba(0,0,0,0.04)}
+    .contact-form input,.contact-form textarea{width:100%;padding:10px 12px;border:1px solid rgba(0,0,0,0.15);border-radius:6px;margin-top:8px;font-size:14px;font-family:'Inter'}
+    .contact-form input:focus,.contact-form textarea:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 2px rgba(212,175,55,0.2)}
+    .contact-form button{margin-top:12px;background:var(--primary);color:#fff;padding:10px 16px;border:none;border-radius:6px;font-weight:600;cursor:pointer;transition:all .25s}
+    .contact-form button:hover{background:#501413}
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <!-- Header / Hero -->
+    <header class="fade in">
+      <div class="photo">
+        <!-- Replace 'rajesh.jpg' with the uploaded image filename -->
+        <img src="rajesh.jpg" alt="Rajesh Kumar Giri">
+      </div>
+      <div>
+        <h1 class="name">Rajesh Kumar Giri</h1>
+        <div class="title">Senior Manager – Operations & Business Development</div>
+        <div class="title" style="font-size:14px;color:rgba(0,0,0,0.65);margin-top:6px">Heritage Renal Edge (Unit of Heritage Hospitals Ltd.), Varanasi</div>
+        <div class="contact">
+          <div>📞 +91 8922875943 / 7905873782 &nbsp; • &nbsp; 📧 <a href="#contact">girirajeshdpsvns2@gmail.com</a></div>
+          <div style="margin-top:6px;color:rgba(0,0,0,0.7);font-size:13px">🏠 Rampur (Lathiya), Bachchhaon, Varanasi – 221011, Uttar Pradesh</div>
+        </div>
+      </div>
+
+      <div class="actions">
+        <a class="btn btn-primary" href="rajesh_resume.pdf" download>📄 Download Resume</a>
+        <a class="btn btn-secondary" href="#contact">✉️ Email</a>
+      </div>
+    </header>
+
+    <div class="divider" aria-hidden></div>
+
+    <!-- Two column layout: main + sidebar -->
+    <div class="two-col">
+      <main>
+        <!-- Profile Summary -->
+        <section class="card fade in" style="margin-bottom:18px">
+          <h2>Profile Summary</h2>
+          <p>
+            Highly motivated and results-oriented HR and operations professional with a strong background in human resources management, administration, and business development. Demonstrated excellence in recruitment, performance management, compliance, and audit operations. Proven leadership in driving organizational growth, employee engagement, and operational efficiency across multiple healthcare centers.
+          </p>
+        </section>
+
+        <!-- Experience -->
+        <section class="card fade in">
+          <h2>Experience</h2>
+
+          <div class="exp-item">
+            <div class="exp-title">Sr. Manager – Operations & Business Development</div>
+            <div class="exp-meta">Heritage Renal Edge (Unit of Heritage Hospitals Ltd.), Lanka, Varanasi — Apr 2025 – Present</div>
+            <p style="margin-top:8px;color:var(--text);">Direct day-to-day operations of multiple dialysis centers under the PPP model. Ensure compliance with healthcare standards and government guidelines. Monitor financial performance, billing, and reimbursements. Prepare MIS and audit documentation. Supervise HR, recruitment, and staff performance. Oversee patient care quality, biomedical equipment, and vendor management.</p>
+          </div>
+
+          <div class="exp-item">
+            <div class="exp-title">HR, Audit Operation Manager & Office Admin</div>
+            <div class="exp-meta">Heritage Renal Edge — Mar 2022 – Mar 2025</div>
+            <p style="margin-top:8px;color:var(--text);">Led HR and administrative operations to maintain compliance and efficiency. Oversaw employee engagement, recruitment, and appraisal systems. Managed audits and continuous improvement initiatives.</p>
+          </div>
+
+          <div class="exp-item">
+            <div class="exp-title">Officer on Special Duty (OSD) cum HR Manager</div>
+            <div class="exp-meta">Heritage Renal Edge — Oct 2018 – Feb 2022</div>
+            <p style="margin-top:8px;color:var(--text);">Coordinated HR policies and implemented effective employee counseling programs. Enhanced workplace culture through employee-focused initiatives.</p>
+          </div>
+
+          <div class="exp-item">
+            <div class="exp-title">Senior Office Executive</div>
+            <div class="exp-meta">Heritage Renal Edge — Sept 2017 – Sept 2018</div>
+            <p style="margin-top:8px;color:var(--text);">Assisted HR and audit teams in administrative and compliance documentation.</p>
+          </div>
+
+          <div class="exp-item">
+            <div class="exp-title">Sr. Manager – Operation & Business Development</div>
+            <div class="exp-meta">Heritage Renal Edge — July 2016 – Aug 2017</div>
+            <p style="margin-top:8px;color:var(--text);">Strengthened business relations and optimized administrative workflows.</p>
+          </div>
+
+          <div class="exp-item">
+            <div class="exp-title">Office Executive</div>
+            <div class="exp-meta">Heritage Renal Edge — 2015 – 2016</div>
+            <p style="margin-top:8px;color:var(--text);">Supported general office administration and HR documentation.</p>
+          </div>
+
+        </section>
+
+        <!-- Education -->
+        <section class="card fade in" style="margin-top:18px">
+          <h2>Education</h2>
+          <ul style="margin-top:8px">
+            <li><strong>MBA (HR & Finance)</strong> — Swami Vivekanand Subharti University, Meerut (2021)</li>
+            <li style="margin-top:6px"><strong>Post Graduate in Sociology</strong> — UPRTOU, Prayagraj (2016)</li>
+            <li style="margin-top:6px"><strong>P.G.D.C.A.</strong> — CSJM University, Kanpur (2009)</li>
+            <li style="margin-top:6px"><strong>Graduation</strong> — Purvanchal University, Jaunpur (2007)</li>
+            <li style="margin-top:6px"><strong>Intermediate & High School</strong> — UP Board (2004, 2002)</li>
+          </ul>
+        </section>
+
+        <!-- Awards & Expertise -->
+        <section class="card fade in" style="margin-top:18px">
+          <h2>Awards & Expertise</h2>
+          <p style="margin-top:8px;font-weight:600">Awards & Recognition</p>
+          <p style="margin-top:6px">🏆 Best Employee of the Year — Heritage Hospitals Ltd. (2018, 2022)</p>
+
+          <div style="margin-top:12px">
+            <p style="font-weight:600;margin-bottom:8px">Expertise</p>
+            <div class="pills">
+              <span class="pill">Operations Management</span>
+              <span class="pill">HR Strategy</span>
+              <span class="pill">Recruitment & Appraisal</span>
+              <span class="pill">Compliance</span>
+              <span class="pill">Audit</span>
+              <span class="pill">Employee Engagement</span>
+              <span class="pill">Vendor Coordination</span>
+              <span class="pill">Team Leadership</span>
+              <span class="pill">Administration</span>
+            </div>
+          </div>
+        </section>
+
+      </main>
+
+      <aside>
+        <div class="card fade in">
+          <h2>Personal Information</h2>
+          <div class="info" style="margin-top:10px">
+            <dl>
+              <dt>Father’s Name</dt><dd>Late Vijay Bahadur Giri</dd>
+              <dt>Mother’s Name</dt><dd>Late Pushpa Devi</dd>
+              <dt>Date of Birth</dt><dd>03 August 1988</dd>
+              <dt>Gender</dt><dd>Male</dd>
+              <dt>Marital Status</dt><dd>Married</dd>
+              <dt>Religion</dt><dd>Hindu</dd>
+            </dl>
+          </div>
+
+          <div style="margin-top:18px">
+            <h3 style="margin:0 0 8px 0;font-family:'Playfair Display',serif;color:var(--primary);font-size:16px">Contact</h3>
+            <p style="margin:0;font-weight:600">📞 +91 8922875943</p>
+            <p style="margin:4px 0 0 0;font-weight:600">📞 7905873782</p>
+            <p style="margin-top:8px;font-size:14px"><a href="#contact">girirajeshdpsvns2@gmail.com</a></p>
+          </div>
+        </div>
+
+        <div class="card fade in" style="margin-top:18px;padding:14px;text-align:center">
+          <p style="margin:0;font-weight:600;color:var(--primary)">Ready to discuss operations excellence and growth strategies.</p>
+          <a href="mailto:girirajeshdpsvns2@gmail.com" class="btn btn-primary" style="display:inline-block;margin-top:12px">Connect</a>
+        </div>
+      </aside>
+    </div>
+<!-- Contact Form -->
+<section id="contact" class="contact-form fade-in">
+  <h2 style="color:#6A1B1A; text-align:center; margin-bottom:20px;">Contact Me</h2>
+  <form 
+    action="https://formspree.io/f/myznrvpd" 
+    method="POST" 
+    style="max-width:600px; margin:0 auto; display:flex; flex-direction:column; gap:15px;"
+  >
+    <label for="name" style="color:#0A0A0A; font-weight:600;">Your Name</label>
+    <input 
+      type="text" 
+      id="name" 
+      name="name" 
+      required 
+      style="padding:10px; border:1px solid #D4AF37; border-radius:8px; font-size:16px;"
+    >
+
+    <label for="email" style="color:#0A0A0A; font-weight:600;">Your Email</label>
+    <input 
+      type="email" 
+      id="email" 
+      name="email" 
+      required 
+      style="padding:10px; border:1px solid #D4AF37; border-radius:8px; font-size:16px;"
+    >
+
+    <label for="message" style="color:#0A0A0A; font-weight:600;">Your Message</label>
+    <textarea 
+      id="message" 
+      name="message" 
+      rows="5" 
+      required 
+      style="padding:10px; border:1px solid #D4AF37; border-radius:8px; font-size:16px; resize:none;"
+    ></textarea>
+
+    <button 
+      type="submit" 
+      style="background-color:#6A1B1A; color:#F9F6F1; border:none; padding:12px; border-radius:8px; font-size:16px; cursor:pointer; transition:0.3s;"
+      onmouseover="this.style.backgroundColor='#8B2322'" 
+      onmouseout="this.style.backgroundColor='#6A1B1A'"
+    >
+      Send Message
+    </button>
+  </form>
+</section>
+
+
+    <footer>
+      <p>© <span id="year"></span> Rajesh Kumar Giri — By EdPulse</p>
+    </footer>
+
+  </div>
+
+  <script>
+    // simple fade-in on load
+    window.addEventListener('load', ()=>{
+      document.querySelectorAll('.fade').forEach((el,i)=>setTimeout(()=>el.classList.add('in'), 120*i));
+      document.getElementById('year').textContent = new Date().getFullYear();
+    });
+  </script>
+</body>
+</html>
